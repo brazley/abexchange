@@ -83,9 +83,9 @@ function Hero() {
         </h1>
 
         <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-ink-2 sm:text-[16px]">
-          A certified-business network for every diverse-owned firm — minority, women, veteran, LGBTQ+, and
-          disability-owned. Registry-grade certification, AI-native matchmaking, and live opportunity flow from the
-          Exchange, so the right buyers and suppliers actually find each other.
+          A certified-business network for every small and/or local business. Registry-grade certification,
+          AI-native matchmaking, and live opportunity flow from the Exchange, so the right buyers and suppliers
+          actually find each other.
         </p>
 
         <div className="mt-7 flex flex-wrap items-center gap-3">
