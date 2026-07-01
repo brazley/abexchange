@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ *
+   American Business Exchange — design tokens
+   Editorial business publication, dark and AI-quiet. Think a
+   dark FT/Bloomberg that built LinkedIn: serifed, squared, precise,
+   intelligence present only as a hint.
+ * ------------------------------------------------------------------ */
+@theme {
+  --color-canvas: #0a0a0a;
+  --color-surface: #131313;
+  --color-elevated: #191919;
+  --color-line: #1f1f1f; /* hairline, lower contrast */
+  --color-line-strong: #2b2b2b;
+
+  --color-ink: #fafafa;
+  --color-ink-2: #a0a0a0;
+  --color-ink-3: #6b6b6b;
+
+  --color-accent: #5b8def;
+  --color-accent-strong: #4d7cfe;
+  --color-accent-ink: #b9ccff;
+
+  --color-sand: #dad8cf;
+  --color-gain: #56b981;
+  --color-loss: #e5715b;
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4", ui-serif, Georgia, serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
+
+  /* Squared geometry — almost right-angled, never pill */
+  --radius-panel: 6px; /* large containers, sidebar rails */
+  --radius-card: 4px; /* feed posts, metric tiles */
+  --radius-field: 4px; /* inputs, buttons */
+  --radius-chip: 3px; /* tags, action chips, fact cards */
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv01", "cv03", "ss01";
+  }
+
+  ::selection {
+    background: color-mix(in oklch, var(--color-accent) 34%, transparent);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px var(--color-canvas),
+      0 0 0 3px color-mix(in oklch, var(--color-accent) 60%, transparent);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line-strong);
+    border: 3px solid var(--color-canvas);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3a;
+  }
+}
+
+@layer utilities {
+  /* Display serif — editorial confidence at large sizes */
+  .display {
+    font-family: var(--font-serif);
+    letter-spacing: -0.012em;
+  }
+
+  /* Newspaper kicker — small serif section header */
+  .kicker {
+    font-family: var(--font-serif);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+  }
+
+  /* Intelligence as a hint — glow dialed well back */
+  .glow-field {
+    background: radial-gradient(
+      54% 40% at 20% -6%,
+      color-mix(in oklch, var(--color-accent) 9%, transparent) 0%,
+      transparent 60%
+    );
+  }
+
+  .tnum {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum";
+    letter-spacing: -0.035em;
+  }
+
+  /* Keep the fact carousels scrollable without a visible bar */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Very fine grain so the near-black doesn't go flat */
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.022;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
