@@ -8,7 +8,7 @@ export const BRAND = "American Business Exchange";
 export const BRAND_SHORT = "ABE";
 
 export const user = {
-  name: "Carl Okafor",
+  name: "Carl Brazley",
   role: "Principal, Partnerships",
   greeting: "Carl",
 };

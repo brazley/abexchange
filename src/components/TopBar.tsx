@@ -45,7 +45,9 @@ export function TopBar() {
   return (
     <div className="sticky top-0 z-30 border-b border-line bg-canvas/85 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-[1220px] items-center gap-4 px-5 sm:px-8">
-        <Mark />
+        <NavLink to="/" aria-label={`${BRAND} — home`} className="rounded-sm outline-none transition-opacity hover:opacity-80 focus-visible:opacity-80">
+          <Mark />
+        </NavLink>
 
         <nav className="ml-5 hidden items-center gap-1 xl:flex" aria-label="Primary">
           {NAV.map((item) =>
