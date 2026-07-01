@@ -249,6 +249,9 @@ export default function News() {
       <footer className="mt-16 flex flex-col items-center gap-1 text-center">
         <span className="display text-[13px] text-ink-3">American Business Exchange · News</span>
         <span className="text-[11px] text-ink-3/70">A working prototype · imagery via Unsplash · all content illustrative</span>
+        <span className="mt-1 text-[11px] text-ink-3/70">
+          A <span className="display text-ink-2">7/</span> company
+        </span>
       </footer>
     </main>
   );

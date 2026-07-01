@@ -10,6 +10,7 @@ export const BRAND_SHORT = "ABE";
 export const user = {
   name: "Carl Brazley",
   role: "Principal, Partnerships",
+  company: "7/",
   greeting: "Carl",
 };
 
