@@ -7,10 +7,10 @@ import { Avatar } from "./primitives";
 
 const NAV: { label: string; to: string; routed: boolean }[] = [
   { label: "The Exchange", to: "/", routed: true },
+  { label: "Market", to: "/market", routed: true },
   { label: "News", to: "/news", routed: true },
   { label: "Opportunities", to: "#", routed: false },
   { label: "Network", to: "#", routed: false },
-  { label: "Messages", to: "#", routed: false },
 ];
 
 /**
