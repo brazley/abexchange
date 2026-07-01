@@ -9,8 +9,8 @@ const NAV: { label: string; to: string; routed: boolean }[] = [
   { label: "The Exchange", to: "/", routed: true },
   { label: "Market", to: "/market", routed: true },
   { label: "News", to: "/news", routed: true },
-  { label: "Opportunities", to: "#", routed: false },
-  { label: "Network", to: "#", routed: false },
+  { label: "Opportunities", to: "/opportunities", routed: true },
+  { label: "Network", to: "/network", routed: true },
 ];
 
 /**

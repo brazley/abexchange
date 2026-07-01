@@ -3,6 +3,8 @@ import { TopBar } from "./components/TopBar";
 import Dashboard from "./pages/Dashboard";
 import News from "./pages/News";
 import Market from "./pages/Market";
+import Opportunities from "./pages/Opportunities";
+import Network from "./pages/Network";
 
 // On the bare market subdomain (market.abexchange.ogel.fyi) the Market
 // landing IS the site root; everywhere else "/" is the dashboard.
@@ -18,6 +20,8 @@ export default function App() {
           <Route path="/" element={isMarketHost ? <Market /> : <Dashboard />} />
           <Route path="/news" element={<News />} />
           <Route path="/market" element={<Market />} />
+          <Route path="/opportunities" element={<Opportunities />} />
+          <Route path="/network" element={<Network />} />
         </Routes>
       </div>
     </BrowserRouter>
