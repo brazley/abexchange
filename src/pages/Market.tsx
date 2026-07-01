@@ -140,7 +140,7 @@ function Certification() {
     <section className="mt-16">
       <SectionHead
         kicker="Certification"
-        title="One credential. Every diverse category."
+        title="One credential. Every category."
         blurb="Where the incumbent certifies minority-owned firms only, the Market recognizes all five — verified once, honored everywhere."
       />
 
