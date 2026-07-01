@@ -1,8 +1,17 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 import { Search, Bell, Plus, Sparkles } from "lucide-react";
 import { BRAND, BRAND_SHORT, user } from "../data/mock";
 import { Avatar } from "./primitives";
+
+const NAV: { label: string; to: string; routed: boolean }[] = [
+  { label: "The Exchange", to: "/", routed: true },
+  { label: "News", to: "/news", routed: true },
+  { label: "Opportunities", to: "#", routed: false },
+  { label: "Network", to: "#", routed: false },
+  { label: "Messages", to: "#", routed: false },
+];
 
 /**
  * ABE mark — an editorial masthead initial. A squared, hairline-bordered
@@ -39,17 +48,30 @@ export function TopBar() {
         <Mark />
 
         <nav className="ml-5 hidden items-center gap-1 xl:flex" aria-label="Primary">
-          {["The Exchange", "Opportunities", "Network", "Messages"].map((item, i) => (
-            <a
-              key={item}
-              href="#"
-              className={`rounded-field px-3 py-1.5 text-[13px] transition-colors ${
-                i === 0 ? "text-ink" : "text-ink-3 hover:text-ink-2"
-              }`}
-            >
-              {item}
-            </a>
-          ))}
+          {NAV.map((item) =>
+            item.routed ? (
+              <NavLink
+                key={item.label}
+                to={item.to}
+                end={item.to === "/"}
+                className={({ isActive }) =>
+                  `rounded-field px-3 py-1.5 text-[13px] transition-colors ${
+                    isActive ? "text-ink" : "text-ink-3 hover:text-ink-2"
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            ) : (
+              <a
+                key={item.label}
+                href={item.to}
+                className="rounded-field px-3 py-1.5 text-[13px] text-ink-3 transition-colors hover:text-ink-2"
+              >
+                {item.label}
+              </a>
+            ),
+          )}
         </nav>
 
         {/* AI ask bar — quiet: no glow at rest, a faint one on focus */}
